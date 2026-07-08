@@ -18,7 +18,7 @@ import { COLORS } from "@/constants/theme";
 import { styles } from "@/styles/create.styles";
 import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 
 export default function CreateScreen() {
   const router = useRouter();
