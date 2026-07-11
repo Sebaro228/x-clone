@@ -55,4 +55,22 @@ export default defineSchema({
     .index("by_user", ["userId"])
     .index("by_tweet", ["tweetId"])
     .index("by_both", ["userId", "tweetId"]),
+
+  // Таблиця коментарів до твітів
+  comments: defineTable({
+    userId: v.id("users"),   // Автор коментаря
+    tweetId: v.id("tweets"), // ID твіту, під яким залишено коментар
+    content: v.string(),     // Текст коментаря
+  }).index("by_tweet", ["tweetId"]),
+
+  // Таблиця історій (Stories)
+  stories: defineTable({
+    userId: v.id("users"),
+    imageUrl: v.string(),
+    storageId: v.id("_storage"),
+    expiresAt: v.number(), // Timestamp закінчення дії історії (24 години)
+    views: v.number(),     // Кількість переглядів
+  })
+    .index("by_user", ["userId"])
+    .index("by_expires", ["expiresAt"]),
 });

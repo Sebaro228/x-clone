@@ -13,6 +13,7 @@
     "@convex-dev/auth": "^0.0.94",
     "@expo/vector-icons": "^15.0.3",
     "convex": "^1.42.1",
+    "date-fns": "^4.4.0",
     "expo": "~54.0.34",
     "expo-constants": "~18.0.13",
     "expo-file-system": "~19.0.23",
